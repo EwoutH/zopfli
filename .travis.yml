@@ -4,9 +4,4 @@ compiler:
   - clang
   - gcc
 
-jobs:
-  include:
-    - stage: build
-      script: make
-    - stage: test
-      script: make test
+script: make
