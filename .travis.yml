@@ -3,10 +3,11 @@ language: cpp
 os:
   - linux
   - osx
-  - windows
 
 compiler:
   - clang
   - gcc
 
-script: make
+matrix:
+  - script: make
+  - script: make zopflipng
