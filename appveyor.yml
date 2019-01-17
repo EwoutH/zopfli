@@ -1,4 +1,4 @@
 image: Visual Studio 2017
 
 build_script:
-    - g++ src/zopfli/{blocksplitter,cache,deflate,gzip_container,hash,katajainen,lz77,squeeze,tree,util,zlib_container,zopfli_lib}.c src/zopflipng/*.cc src/zopflipng/lodepng/*.cpp -O2 -W -Wall -Wextra -Wno-unused-function -ansi -pedantic -o zopflipng
+   - g++ src/zopfli/{blocksplitter,cache,deflate,gzip_container,hash,katajainen,lz77,squeeze,tree,util,zlib_container,zopfli_lib}.c src/zopflipng/*.cc src/zopflipng/lodepng/*.cpp -O2 -W -Wall -Wextra -Wno-unused-function -ansi -pedantic -o zopflipng
