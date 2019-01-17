@@ -4,7 +4,7 @@ compiler:
   - clang
   - gcc
   
-before_install: cd project
+before_install: cd zopfli
 
 build:
  - make build --release
