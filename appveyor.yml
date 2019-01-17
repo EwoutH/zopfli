@@ -1,3 +1,3 @@
-image: Visual Studio 2017
+image: ubuntu1804
 
-build: cmake
+build: make --release
