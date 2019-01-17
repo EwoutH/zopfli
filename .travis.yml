@@ -1,10 +1,11 @@
 language: cpp
 
-build: make
-
-test: make test
-
 compiler:
   - clang
   - gcc
-  
+
+build:
+ - make build --release
+
+test:
+ - make test
