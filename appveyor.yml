@@ -1,3 +1,5 @@
 image: ubuntu1804
 
-build: make --release
+build_script: make
+
+test_script: make --test
