@@ -8,6 +8,9 @@ compiler:
   - clang
   - gcc
 
-matrix:
-  - script: make
-  - script: make zopflipng
+env:
+ - target=zopfli
+ - target=zopflipng
+
+script:
+ - make $target
