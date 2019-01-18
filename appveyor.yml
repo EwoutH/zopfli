@@ -17,7 +17,7 @@ before_build:
 
 ## Gets executed with cmake compiler (MSVC)
 build: 
-  project: C:\projects\zopfli\cmake_build.sln
+  project: C:/projects/zopfli/cmake_build.sln
  
 ## Gets executed with cygwin64 compiler
 build_script:
@@ -25,7 +25,7 @@ build_script:
  
 ## Publishes artifacts to AppVeyor
 artifacts:
- - path: **/zopflipng.exe
+ - path: cmake_build/*.exe
    name: zopflip-x86_64-cmake
  - path: zopflipng.exe
    name: zopflipng-x86_64-cygwin64
