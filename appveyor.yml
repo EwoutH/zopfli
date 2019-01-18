@@ -5,6 +5,7 @@ environment:
   matrix:
    - compiler: cmake
      instal-script: 'cd %APPVEYOR_BUILD_FOLDER% & mkdir cmake_build & cd cmake_build & cmake --version & cmake c:\projects\zopfli'
+     configuration: Release
    - compiler: cygwin64
      instal-script: 'SET PATH=C:\cygwin64\bin;%PATH%'
      build: false
@@ -24,7 +25,7 @@ build_script:
  
 ## Publishes artifacts to AppVeyor
 artifacts:
- - path: \cmake_build\Release\zopflipng.exe.exe
+ - path: \cmake_build\Release\zopflipng.exe
    name: zopflip-x86_64-cmake
  - path: zopflipng.exe
    name: zopflipng-x86_64-cygwin64
