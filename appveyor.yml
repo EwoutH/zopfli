@@ -4,8 +4,7 @@ environment:
   matrix:
    - compiler: cmake
      instal-script: 'cd %APPVEYOR_BUILD_FOLDER% & mkdir cmake_build & cd cmake_build & cmake --version & cmake c:\projects\zopfli'
-     build_script: false
-   - compiler: cmake
+   - compiler: cygwin64
      instal-script: 'SET PATH=C:\cygwin64\bin;%PATH%'
      build: false
 
@@ -17,7 +16,7 @@ build:
   project: C:\projects\zopfli\cmake_build\%target%.sln
  
 build_script:
- - x86_64-pc-cygwin-g++.exe src/zopfli/{blocksplitter,cache,deflate,gzip_container,hash,katajainen,lz77,squeeze,tree,util,zlib_container,zopfli_lib}.c src/zopflipng/*.cc src/zopflipng/lodepng/*.cpp -O2 -W -Wall -Wextra -Wno-unused-function -ansi -pedantic -o zopflipng
+ - if "compiler==cygwin64" x86_64-pc-cygwin-g++.exe src/zopfli/{blocksplitter,cache,deflate,gzip_container,hash,katajainen,lz77,squeeze,tree,util,zlib_container,zopfli_lib}.c src/zopflipng/*.cc src/zopflipng/lodepng/*.cpp -O2 -W -Wall -Wextra -Wno-unused-function -ansi -pedantic -o zopflipng
  
 artifacts:
  - path: \cmake_build\Release\zopflipng.exe.exe
