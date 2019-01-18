@@ -2,9 +2,8 @@ image: Visual Studio 2017
 
 environment:
   matrix:
-    include:
-    - target: zopfli
-    - target: zopflipng
+   - target: zopfli
+   - target: zopflipng
 
 build_script:
  - cmake $target
