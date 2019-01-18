@@ -5,8 +5,17 @@ environment:
    - target: zopfli
    - target: zopflipng
 
-build_script:
- - cmake %target%
+before_build:
+- cmd: |-
+    cd %APPVEYOR_BUILD_FOLDER%
+    mkdir cmake_build
+    cd cmake_build
+    cmake --version
+    cmake c:\projects\zopfli
+
+# Build aom with Visual Studio 2017
+build:
+  project: C:\projects\zopfli\cmake_build\zopfli.sln
  
 artifacts:
  - path: \**\zopflipng.exe
