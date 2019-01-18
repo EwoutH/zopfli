@@ -6,7 +6,7 @@ environment:
    - target: zopflipng
 
 build_script:
- - cmake $target
+ - cmake %target%
  
 artifacts:
  - path: \**\zopflipng.exe
