@@ -15,7 +15,7 @@ before_build:
 
 # Build aom with Visual Studio 2017
 build:
-  project: C:\projects\zopfli\cmake_build\zopfli.sln
+  project: C:\projects\zopfli\cmake_build\%target%.sln
  
 artifacts:
  - path: \**\zopflipng.exe
