@@ -17,7 +17,7 @@ before_build:
 
 ## Gets executed with cmake compiler (MSVC)
 build: 
-  project: C:\projects\zopfli\cmake_build\zopflipng.sln
+  project: C:\projects\zopfli\cmake_build.sln
  
 ## Gets executed with cygwin64 compiler
 build_script:
