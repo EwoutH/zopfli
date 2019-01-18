@@ -3,10 +3,10 @@ image: Visual Studio 2017
 environment:
   matrix:
    - compiler: cmake
-     instal-script: "cd %APPVEYOR_BUILD_FOLDER% & mkdir cmake_build & cd cmake_build & cmake --version & cmake c:\projects\zopfli"
+     instal-script: 'cd %APPVEYOR_BUILD_FOLDER% & mkdir cmake_build & cd cmake_build & cmake --version & cmake c:\projects\zopfli'
      build_script: false
    - compiler: cmake
-     instal-script: "SET PATH=C:\cygwin64\bin;%PATH%"
+     instal-script: 'SET PATH=C:\cygwin64\bin;%PATH%'
      build: false
 
 before_build:
