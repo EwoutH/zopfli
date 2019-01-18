@@ -5,11 +5,10 @@ environment:
   matrix:
    - compiler: cmake
      instal-script: 'cd %APPVEYOR_BUILD_FOLDER% & mkdir cmake_build & cd cmake_build & cmake --version & cmake c:\projects\zopfli'
+     configuration: Release
    - compiler: cygwin64
      instal-script: 'SET PATH=C:\cygwin64\bin;%PATH%'
      build: false
-     
-configuration: Release
 
 ## Installs 'instal-script' from matrix
 before_build:
@@ -18,7 +17,7 @@ before_build:
 
 ## Gets executed with cmake compiler (MSVC)
 build: 
-  project: C:\projects\zopfli\cmake_build\%target%.sln
+  project: C:\projects\zopfli\cmake_build\zopflipng.sln
  
 ## Gets executed with cygwin64 compiler
 build_script:
