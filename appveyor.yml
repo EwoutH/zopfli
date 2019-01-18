@@ -20,8 +20,9 @@ build:
  
 ## Gets executed with cygwin64 compiler
 build_script:
- - IF "%compiler%==cygwin64" (x86_64-pc-cygwin-g++.exe src/zopfli/{blocksplitter,cache,deflate,gzip_container,hash,katajainen,lz77,squeeze,tree,util,zlib_container,zopfli_lib}.c src/zopflipng/*.cc src/zopflipng/lodepng/*.cpp -O2 -W -Wall -Wextra -Wno-unused-function -ansi -pedantic -o zopflipng) ELSE
+ - IF "%compiler%"=="cygwin64" x86_64-pc-cygwin-g++.exe src/zopfli/{blocksplitter,cache,deflate,gzip_container,hash,katajainen,lz77,squeeze,tree,util,zlib_container,zopfli_lib}.c src/zopflipng/*.cc src/zopflipng/lodepng/*.cpp -O2 -W -Wall -Wextra -Wno-unused-function -ansi -pedantic -o zopflipng
  
+## Publishes artifacts to AppVeyor
 artifacts:
  - path: \cmake_build\Release\zopflipng.exe.exe
    name: zopflip-x86_64-cmake
