@@ -1,13 +1,13 @@
 language: cpp
 dist: bionic
 
+arch:
+ - amd64
+ - arm64
+
 compiler:
   - clang
   - gcc
 
-env:
- - target=zopfli
- - target=zopflipng
-
 script:
- - make $target
+ - make all
