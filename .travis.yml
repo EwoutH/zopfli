@@ -11,3 +11,5 @@ compiler:
 
 script:
  - make all
+ - make install
+ - make test
