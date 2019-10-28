@@ -5,20 +5,13 @@ environment:
   matrix:
    - compiler: cmake
      image: Visual Studio 2019
-     instal-script: 'cd %APPVEYOR_BUILD_FOLDER% & mkdir cmake_build & cd cmake_build & cmake --version & cmake -A x64 c:\projects\zopfli'
+     install: cd %APPVEYOR_BUILD_FOLDER% & mkdir cmake_build & cd cmake_build & cmake --version & cmake -A x64 c:\projects\zopfli
+     build:
+       project: zopfli.sln
    - compiler: cygwin64
      image: Visual Studio 2017
-     instal-script: 'SET PATH=C:\cygwin64\bin;%PATH%'
-
-## Installs 'instal-script' from matrix
-before_build:
-- cmd: |-
-    %instal-script%
-
-## Builds zopflipng
-build_script:
- - IF "%compiler%"=="cmake" msbuild "C:\projects\zopfli\cmake_build\zopfli.sln"
- - IF "%compiler%"=="cygwin64" x86_64-pc-cygwin-g++.exe src/zopfli/{blocksplitter,cache,deflate,gzip_container,hash,katajainen,lz77,squeeze,tree,util,zlib_container,zopfli_lib}.c src/zopflipng/*.cc src/zopflipng/lodepng/*.cpp -O2 -W -Wall -Wextra -Wno-unused-function -ansi -pedantic -o zopflipng
+     install: SET PATH=C:\cygwin64\bin;%PATH%
+     build_script: x86_64-pc-cygwin-g++.exe src/zopfli/{blocksplitter,cache,deflate,gzip_container,hash,katajainen,lz77,squeeze,tree,util,zlib_container,zopfli_lib}.c src/zopflipng/*.cc src/zopflipng/lodepng/*.cpp -O2 -W -Wall -Wextra -Wno-unused-function -ansi -pedantic -o zopflipng
  
 ## Publishes artifacts to AppVeyor
 artifacts:
