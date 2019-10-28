@@ -1,12 +1,13 @@
-image: Visual Studio 2019
 configuration: Release
 
 ## Sets up two jobs, one with cmake (MSVC) and one with cygwin64
 environment:
   matrix:
    - compiler: cmake
+     image: Visual Studio 2019
      instal-script: 'cd %APPVEYOR_BUILD_FOLDER% & mkdir cmake_build & cd cmake_build & cmake --version & cmake -A x64 c:\projects\zopfli'
    - compiler: cygwin64
+     image: Visual Studio 2017
      instal-script: 'SET PATH=C:\cygwin64\bin;%PATH%'
 
 ## Installs 'instal-script' from matrix
